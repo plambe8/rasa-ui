@@ -49,4 +49,4 @@ ENV rasacoreendpoint=http://localhost:5005
 
 EXPOSE 5001
 
-ENTRYPOINT bash -c 'hostname -I; service rasaui -c "npm start"'
+CMD npm start
