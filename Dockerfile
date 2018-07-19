@@ -40,5 +40,5 @@ ENV rasanluendpoint=http://localhost:5000
 ENV rasacoreendpoint=http://localhost:5005
 
 EXPOSE 5001
-
+EXPOSE 2324
 ENTRYPOINT bash -c 'hostname -I; rasaui -c "npm start"'
