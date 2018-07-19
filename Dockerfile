@@ -22,7 +22,14 @@ RUN mv bin/* /usr/bin/ \
     && mv share/man/man1/* /usr/share/man/man1/ \
     && mv share/systemtap/* /usr/share/systemtap/
 
+## Postgres
+# Configuration
+RUN mkdir /opt/pgsql \
+    && chown postgres -R /opt/pgsql
+WORKDIR /opt/postgresql
 
+ADD resources/dbcreate.sql dbcreate.sql
+RUN service postgresql start && su postgres -c "createuser rasaui && echo \"create database rasaui; \c rasaui; \i dbcreate.sql\" | psql && echo \"grant all on database rasaui to rasaui; grant all privileges on all tables in schema public to rasaui; grant all privileges on all sequences in schema public to rasaui \"|psql rasaui" && service postgresql stop
 
 ## RasaUI
 # Installation
@@ -40,5 +47,5 @@ ENV rasanluendpoint=http://localhost:5000
 ENV rasacoreendpoint=http://localhost:5005
 
 EXPOSE 5001
-EXPOSE 2324
-ENTRYPOINT bash -c 'hostname -I; rasaui -c "npm start"'
+
+ENTRYPOINT bash -c 'hostname -I; service postgresql start && rasaui -c "npm start"'
