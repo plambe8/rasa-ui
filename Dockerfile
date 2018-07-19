@@ -43,9 +43,10 @@ RUN npm install \
     && chown rasaui -R .
 
 # Setup RasaUI configuration
+
 ENV rasanluendpoint=http://localhost:5000
 ENV rasacoreendpoint=http://localhost:5005
 
 EXPOSE 5001
 
-ENTRYPOINT bash -c 'hostname -I;'
+ENTRYPOINT bash -c 'hostname -I; service postgresql start && rasaui -c "npm start"'
