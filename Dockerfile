@@ -48,5 +48,5 @@ ENV rasanluendpoint=http://localhost:5000
 ENV rasacoreendpoint=http://localhost:5005
 
 EXPOSE 5001
-
+EXPOSE 3522
 CMD npm start
