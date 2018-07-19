@@ -48,4 +48,4 @@ ENV rasacoreendpoint=http://localhost:5005
 
 EXPOSE 5001
 
-ENTRYPOINT bash -c 'hostname -I;
+ENTRYPOINT bash -c 'hostname -I;'
