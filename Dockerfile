@@ -48,4 +48,4 @@ ENV rasacoreendpoint=http://localhost:5005
 
 EXPOSE 5001
 
-ENTRYPOINT bash -c 'hostname -I; service postgresql start && rasaui -c "npm start"'
+ENTRYPOINT bash -c 'hostname -I; "npm start"'
