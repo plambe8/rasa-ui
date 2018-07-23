@@ -38,17 +38,18 @@
     "socket.io": "^2.0.4"
   },
   "config": {
-    "rasanluendpoint": "http://localhost:5000",
-    "rasacoreendpoint": "http://localhost:5005",
+    "rasanluendpoint": "http://rasa-nlu:5000",
+    "rasacoreendpoint": "http://rasa-core:5005",
     "coresecuritytoken": "",
     "nlusecuritytoken": "",
     "cacheagents": false,
     "jwtsecret": "th1s1sn0t0nlyths3cr3tbutth3m0st1mp0rtAntp13c30f1nf0rmAt10nf0rth1sAppl1cAt10n",
-    "postgresserver": "postgres://postgres:rasaui@localhost:5432/rasaui"
+    "postgresserver": "postgres://postgres:rasa-ui@172.30.175.14:5432/rasa-ui"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/server.js"
+
   },
   "author": "Paul Aschmann",
   "url": "https://github.com/paschmann/rasa-ui",
