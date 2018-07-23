@@ -44,7 +44,7 @@
     "nlusecuritytoken": "",
     "cacheagents": false,
     "jwtsecret": "th1s1sn0t0nlyths3cr3tbutth3m0st1mp0rtAntp13c30f1nf0rmAt10nf0rth1sAppl1cAt10n",
-    "postgresserver": "postgres://postgres:rasa-ui@172.30.175.14:5432/rasa-ui"
+    "postgresserver": "postgres://postgres:rasaui@172.30.175.14:5432/rasaui"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
