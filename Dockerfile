@@ -44,10 +44,10 @@ RUN npm install \
 
 # Setup RasaUI configuration
 RUN sed -r 's/("postgresserver": )"[^"]*"(.*)/\1"\/var\/run\/postgresql"\2/' -i package.json
+
 ENV rasanluendpoint=http://localhost:5000
 ENV rasacoreendpoint=http://localhost:5005
 
 EXPOSE 5001
-EXPOSE 3522
 
 CMD npm start
